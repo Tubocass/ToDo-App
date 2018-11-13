@@ -15,6 +15,7 @@
         ! - Has a set time for completion, i.e. an appointment
         !! - Important, but not Urgent. Complete as soon as you can get to it
         !!! - Relatively minor, usually quick personal maintence or daily habits, i.e. brush teeth, change kitty litter
+        * might put these symbols in reverse order
     Keywords/Labels - Not sure if I want to have this yet. Seems more like a large-scale projevt management thing.
     
 */
@@ -31,8 +32,9 @@ export default class TaskList
         date,//:Date();
     }; */
 
-    addTask(id, taskStr, dueDate, priorityLevel, reminder) 
+    addTask( taskStr, dueDate = 'none', priorityLevel = 1, reminder = 'none') 
     {
+        const id = 0;//generate an id
         const task = {id, taskStr, dueDate, priorityLevel, reminder};
         this.list.push(task);
 
@@ -53,7 +55,7 @@ export default class TaskList
         /*
         if dueDate.none
             return calcAge()<5 ? green:yellow;
-        else if 0 < Date(today) - dueDate.Date < 2
+        else if 0 < (Date(today) - dueDate.Date) < 2
             return yellow
         else if  Date(today) - dueDate.Date <= 0
             return red;
