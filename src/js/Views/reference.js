@@ -1,6 +1,9 @@
 export const keys = {
-    taskInput: document.querySelector('#InputField'),
-    taskDate: document.querySelector('#DatePicker'),
-    taskTime: document.querySelector('#TimePicker'),
-    submitButton: document.querySelector('#Submit')
+    taskInput: document.getElementById('InputField'),
+    taskDate: document.getElementById('DatePicker'),
+    taskTime: document.getElementById('TimePicker'),
+    submitButton: document.getElementById('Submit'),
+    createButton: document.getElementById('newTaskBtn'),
+    listView: document.getElementById("ListView"),
+    inputModal: document.querySelector(".modal")
 }

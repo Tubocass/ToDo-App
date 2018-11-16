@@ -1,15 +1,27 @@
+<!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="style.css">
+    </head>
+
     <body>
-        
-        <form>
-        <input id="InputField" type="text" placeholder="New Task">
-        <br>
-        <input id="DatePicker" type="date">
-        <input id="TimePicker" type="time">
-        <br>
-        <button id="Submit" type="submit">
-                Add
-        </button>
-        </form>
-        </body>
+        <button id="newTaskBtn"><h3>Add</h3></button>
+        <div class="modal">
+            <div>
+            <form>
+                <input id="InputField" type="text" placeholder="New Task">
+                <br>
+                <input id="DatePicker" type="date">
+                <input id="TimePicker" type="time">
+                <br>
+            <button id="Submit" type="submit"> Submit </button> 
+           </form> 
+            </div>
+        </div>
+        <p>
+            <ul id="ListView"></ul>
+        </p>
+    </body>
 </html>
