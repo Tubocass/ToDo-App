@@ -3,7 +3,7 @@ import {keys} from './reference';
 const renderTask = (item) => {
     const markup = `
         <li>
-            <h4>${item.taskStr}</h4>
+            <h4>${item.priorityLevel} - ${item.taskStr} - Due: ${item.dueDate}</h4>
         </li>
     `;
     keys.listView.insertAdjacentHTML('beforeend', markup);
