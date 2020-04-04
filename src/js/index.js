@@ -1,9 +1,33 @@
-import TaskList from './Models/Task';
+import Project from './Models/project';
 import {keys} from './Views/reference';
-import * as TaskView from './Views/taskView'
+import * as TaskView from './Views/projectView'
 
-const tasksList = new TaskList();
+
+/*
+
+Render projects
+
+projectName - description
+dueDate
+    tasks  -- Add New
+    .
+    .
+    .
+projectName - description
+dueDate
+    tasks  -- Add New
+    .
+    .
+    .
+
+
+*/
+
+const projects = [];
+
+//const tasksList = new Project();
 //tasksList.addTask(0,'Pickup cat from school.', new Date(), 0, 'none');
+/*
 keys.submitButton.addEventListener('click',e =>{
     e.preventDefault();
     tasksList.addTask(keys.taskInput.value, keys.taskDate.value);
@@ -11,8 +35,6 @@ keys.submitButton.addEventListener('click',e =>{
     TaskView.RenderList(tasksList.list);
     //console.log('do stuff');
 });
-keys.createButton.addEventListener("click", () =>{
-    keys.inputModal.style.display = "block";
-})
 
+*/
 console.log(tasksList);

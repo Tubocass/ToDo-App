@@ -5,5 +5,5 @@ export const keys = {
     submitButton: document.getElementById('Submit'),
     createButton: document.getElementById('newTaskBtn'),
     listView: document.getElementById("ListView"),
-    inputModal: document.querySelector(".modal")
+    inputModal: document.getElementById("taskModal")
 }
