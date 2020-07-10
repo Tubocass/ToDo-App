@@ -25,9 +25,8 @@ dueDate
 
 const projects = [];
 
-//const tasksList = new Project();
-//tasksList.addTask(0,'Pickup cat from school.', new Date(), 0, 'none');
-/*
+const tasksList = new Project();
+tasksList.addTask(0,'Pickup cat from school.', new Date(), 0, 'none');
 keys.submitButton.addEventListener('click',e =>{
     e.preventDefault();
     tasksList.addTask(keys.taskInput.value, keys.taskDate.value);
@@ -36,5 +35,4 @@ keys.submitButton.addEventListener('click',e =>{
     //console.log('do stuff');
 });
 
-*/
 console.log(tasksList);

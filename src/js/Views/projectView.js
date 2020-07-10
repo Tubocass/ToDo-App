@@ -11,8 +11,8 @@ export function RenderList(list)
         keys.listView.insertAdjacentHTML('beforeend', renderTask(item))
         );
 }
-// keys.createButton.addEventListener("click", () =>{
-//     keys.inputModal.style.display = "block";
-// })
+keys.createButton.addEventListener("click", () =>{
+    keys.inputModal.style.display = "block";
+})
 
 // const task = {id, taskStr, dueDate, priorityLevel, reminder};
