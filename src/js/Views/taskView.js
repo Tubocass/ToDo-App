@@ -2,7 +2,7 @@ export function renderTask(item)
 {
     const markup = `
         <li>
-            <h4>${item.priorityLevel} - ${item.taskStr} - Due: ${item.dueDate}</h4>
+            <input type ="checkbox">- ${item.description} - Due: ${item.dueDate}
         </li>
     `;
     return markup;

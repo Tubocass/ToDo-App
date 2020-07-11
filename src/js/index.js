@@ -1,6 +1,6 @@
 import Project from './Models/project';
 import {keys} from './Views/reference';
-import * as TaskView from './Views/projectView'
+import * as projectView from './Views/projectView'
 
 
 /*
@@ -25,14 +25,20 @@ dueDate
 
 const projects = [];
 
-const tasksList = new Project();
-tasksList.addTask(0,'Pickup cat from school.', new Date(), 0, 'none');
+const tasksList = new Project("Project 1", "Some project", new Date().toLocaleDateString("en-US"));
+tasksList.addTask('Pickup cat from school.', new Date().toLocaleDateString("en-US"));
+projectView.SetProject(tasksList);
+projectView.renderProject();
+
+
 keys.submitButton.addEventListener('click',e =>{
     e.preventDefault();
-    tasksList.addTask(keys.taskInput.value, keys.taskDate.value);
-    TaskView.ClearList();
-    TaskView.RenderList(tasksList.list);
-    //console.log('do stuff');
+    tasksList.addTask(keys.taskInput.value, new Date(keys.taskDate.value).toLocaleDateString("en-US"));
+    keys.taskInput.value = '';
+    keys.taskDate.value = '';
+    projectView.renderProject();
+    
 });
 
-console.log(tasksList);
+
+// console.log(tasksList);

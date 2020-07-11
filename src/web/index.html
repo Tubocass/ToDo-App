@@ -8,21 +8,25 @@
 
     <body>
         <h1 class="title_main">To-Do or not To-Do</h1>
-        <button id="newTaskBtn"><h3>Add</h3></button>
-        <div id="taskModal" class="taskModal">
-            <div>
-                <form>
-                    <input id="InputField" type="text" placeholder="New Task">
-                    <br>
-                    <input id="DatePicker" type="date">
-                    <input id="TimePicker" type="time">
-                    <br>
-                    <button id="Submit" type="submit"> Submit </button> 
-                </form> 
-            </div>
+        <!-- <button id="newTaskBtn"><h3>Add</h3></button>
+        <button id="deleteTaskBtn"><h3>Delete</h3></button> -->
+
+        <div id="projectView">
+        </div>
+        
+        <div>
+            <ul id="listView">
+            </ul>
         </div>
 
-        <div id="ListView">
+        <div id="taskModal" class="taskModal">
+            <input id="InputField" type="text" placeholder="New Task">
+            <!-- <br> -->
+            <input id="DatePicker" type="date">
+            <!-- <input id="TimePicker" type="time"> -->
+            <!-- <br> -->
+            <button id="Submit" type="submit"> Submit </button> 
+        </div>
     
     </body>
 </html>

@@ -1,16 +1,28 @@
 
+body {
+    background-color: burlywood;
+}
 .taskModal {
-    display: none;
+    display: block;
     background-color: brown;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 10px; /* Location of the box */
-    left: 25%;
-    top: 0;
-    width: 50%; /* Full width */
-    height: 80%; /* Full height */
+    padding: 4px; 
+    /* left: 50%;
+    top: 0; */
+    /* width: 400px; 
+    height: 100px;  */
     overflow: auto; /* Enable scroll if needed*/
 }
 h3 {
     color: cyan;
+}
+li {
+    border: 3px;
+    width: fit-content;
+    background-color: burlywood;
+    border-color: black;
+}
+li:hover {
+    background-color: darkgoldenrod;
 }

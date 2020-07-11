@@ -3,7 +3,7 @@
     There is a Meta-List of Projects/Goals *I actually might make "Projects" its own model*
     Tasks are either one-time or reccuring
         Reoccurrence can be every X days/weeks/months
-    Reminders: 
+    Reminders:
         Light - One-time friendly reminder
         Heavy - Extremely Insistent reminder that keeps popping up ubtil the task is done.
     Due Date - A specific date and/or time can be set
@@ -19,40 +19,29 @@
     Keywords/Labels - Not sure if I want to have this yet. Seems more like a large-scale projevt management thing.
     
 */
-
-import Task from './Task';
-
-export default class Project 
-{
-    constructor(title, desc, date) 
-    {
-        this.title = title;
-        this.description = desc;
-        this.dueDate = date;
+export default class TaskList {
+    constructor() {
         this.list = [];
-        this.count = 0;
     }
-
-    addTask(taskStr, dueDate = 'none') 
+    /*
+    dueDate =
     {
-        const id = this.count++;//generate an id
-        const task = new Task(id, taskStr, dueDate);
+        isNone: true,
+        date,//:Date();
+    }; */
+    addTask(taskStr, dueDate = 'none', priorityLevel = 1, reminder = 'none') {
+        const id = 0; //generate an id
+        const task = { id, taskStr, dueDate, priorityLevel, reminder };
         this.list.push(task);
-
         //persist data in JSON
-
         return task;
     }
-
-    deleteTask(id) 
-    {
+    deleteTask(id) {
         const index = this.list.findIndex(el => el.id === id);
         this.list.splice(index, 1);
-         //persist data in JSON
+        //persist data in JSON
     }
-
-    calcHealth()
-    {
+    calcHealth() {
         /*
         if dueDate.none
             return calcAge()<5 ? green:yellow;
