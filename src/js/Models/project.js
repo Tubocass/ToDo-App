@@ -47,6 +47,7 @@ export default class Project
     deleteTask(id) 
     {
         const index = this.list.findIndex(el => el.id === id);
+        console.log(index);
         this.list.splice(index, 1);
          //persist data in JSON
     }

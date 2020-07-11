@@ -40,5 +40,17 @@ keys.submitButton.addEventListener('click',e =>{
     
 });
 
+keys.deleteButton.addEventListener("click", () =>{
+    for(let i =0; i< keys.listView.children.length; i++){
+        console.log(i);
+        if(keys.listView.children[i].firstChild.checked)
+        {
+            tasksList.deleteTask(i)
+        }
+    };
+    projectView.renderProject();
+
+ });
+
 
 // console.log(tasksList);

@@ -12,9 +12,14 @@ export function RenderList()
 {
     keys.listView.innerHTML = '';
 
-    this.project.list.forEach(item =>  
-        keys.listView.insertAdjacentHTML('beforeend', renderTask(item))
-        );
+    this.project.list.forEach((item) =>{  
+        let li = document.createElement('li')
+        li.innerHTML = `<input type ="checkbox">- ${item.description} - Due: ${item.dueDate}`;
+        li.addEventListener("click",()=>{
+            console.log('click');
+        })
+        keys.listView.appendChild(li);
+    });
 }
 
 export function renderProject()
@@ -29,23 +34,14 @@ export function renderProject()
     this.RenderList();
 };
 
-// export function AddTask()
-// {
-//     const markup = `
-//             <div>
-//                     <input id="InputField" type="text" placeholder="New Task">
-//                     <br>
-//                     <input id="DatePicker" type="date">
-//                     <input id="TimePicker" type="time">
-//                     <br>
-//                     <button id="Submit" type="submit"> Submit </button> 
-//             </div>
-//         `;
-   
-//     return markup;
-// }
 
-// keys.createButton.addEventListener("click", () =>{
-//     keys.inputModal.insertAdjacentHTML('beforeend', AddTask());
+// keys.deleteButton.addEventListener("click", () =>{
+//    for(let i =0; i< keys.listView.children.length; i++){
+//        console.log(i);
+//        if(keys.listView.children[i].firstChild.checked)
+//        {
+//            this.project.deleteTask(i)
+//        }
+//    };
 // });
 
