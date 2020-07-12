@@ -25,13 +25,16 @@ dueDate
 
 const projects = [];
 
-const tasksList = new Project("Project 1", "Some project", new Date().toLocaleDateString("en-US"));
-tasksList.addTask('Pickup cat from school.', new Date().toLocaleDateString("en-US"));
-const projectView = new ProjectView();
-projectView.SetProject(tasksList);
-projectView.RenderProject();
+// const tasksList = new Project("Project 1", "Some project", new Date().toLocaleDateString("en-US"));
+// tasksList.addTask('Pickup cat from school.', new Date().toLocaleDateString("en-US"));
+// projects.push(tasksList);
+// const projectView = new ProjectView();
+// projectView.SetProject(tasksList);
+// projectView.RenderProject();
 
+// projects.forEach(
 
+// )
 // keys.submitButton.addEventListener('click',e =>{
 //     e.preventDefault();
 //     tasksList.addTask(keys.taskInput.value, new Date(keys.taskDate.value).toLocaleDateString("en-US"));
@@ -43,7 +46,31 @@ projectView.RenderProject();
 
 keys.createButton.addEventListener('click',e =>{
     e.preventDefault();
-    projectView.AddTask();
+    // projectView.AddTask();
+    let inputModal = document.createElement('div');
+    let taskString = document.createElement('input')
+    taskString.setAttribute("type", "text");
+    let taskDate = document.createElement('input')
+    taskDate.setAttribute("type", "date");
+    let submit = document.createElement('button')
+    submit.innerHTML= "Submit"
+
+    submit.addEventListener("click",()=>{
+        console.log('click');
+        let project = new Project(taskString.value,'', taskDate.value);
+        const projectView = new ProjectView(project);
+        projects.push(projectView);
+
+        // keys.inputModal.style.display = 'hidden';
+        taskString.value = '';
+        taskDate.value = '';
+        
+    })
+
+    inputModal.appendChild(taskString);
+    inputModal.appendChild(taskDate);
+    inputModal.appendChild(submit);
+    keys.projectView.appendChild(inputModal);
     
 });
 keys.deleteButton.addEventListener("click", () =>{
