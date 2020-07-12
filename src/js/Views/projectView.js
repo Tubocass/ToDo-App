@@ -79,12 +79,14 @@ export default class ProjectView{
             submit.innerHTML= "Submit"
 
             submit.addEventListener("click",()=>{
-                console.log('click');
-                this.project.addTask(taskString.value, taskDate.value);
-                this.inputModal.style.display = 'hidden';
-                taskString.value = '';
-                taskDate.value = '';
-                this.RenderProject();
+                if(taskString.value != '')
+                {
+                    this.project.addTask(taskString.value, taskDate.value);
+                    this.inputModal.style.visibility = 'hidden';
+                    taskString.value = '';
+                    taskDate.value = '';
+                    this.RenderProject();
+                }
             })
 
             this.inputModal.appendChild(taskString);
@@ -92,7 +94,7 @@ export default class ProjectView{
             this.inputModal.appendChild(submit);
             this.listView.appendChild(this.inputModal);
         }else{
-            this.inputModal.style.display = 'block';
+            this.inputModal.style.visibility = 'visible';
         }
     }
 }

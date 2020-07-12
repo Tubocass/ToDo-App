@@ -49,13 +49,15 @@ keys.createButton.addEventListener('click',e =>{
         submit.innerHTML= "Submit"
 
         submit.addEventListener("click",()=>{
-            let project = new Project(taskString.value,'', taskDate.value);
-            const projectView = new ProjectView(project);
-            projects.push(projectView);
-            taskString.value = '';
-            taskDate.value = '';
-            inputModal.style.visibility = 'hidden';
-           
+            if(taskString.value != '')
+            {
+                let project = new Project(taskString.value,'', taskDate.value);
+                const projectView = new ProjectView(project);
+                projects.push(projectView);
+                taskString.value = '';
+                taskDate.value = '';
+                inputModal.style.visibility = 'hidden';
+            }
         })
 
         inputModal.appendChild(taskString);
