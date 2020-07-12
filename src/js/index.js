@@ -1,6 +1,6 @@
 import Project from './Models/project';
 import {keys} from './Views/reference';
-import * as projectView from './Views/projectView'
+import ProjectView from './Views/projectView'
 
 
 /*
@@ -27,19 +27,25 @@ const projects = [];
 
 const tasksList = new Project("Project 1", "Some project", new Date().toLocaleDateString("en-US"));
 tasksList.addTask('Pickup cat from school.', new Date().toLocaleDateString("en-US"));
+const projectView = new ProjectView();
 projectView.SetProject(tasksList);
-projectView.renderProject();
+projectView.RenderProject();
 
 
-keys.submitButton.addEventListener('click',e =>{
+// keys.submitButton.addEventListener('click',e =>{
+//     e.preventDefault();
+//     tasksList.addTask(keys.taskInput.value, new Date(keys.taskDate.value).toLocaleDateString("en-US"));
+//     keys.taskInput.value = '';
+//     keys.taskDate.value = '';
+//     projectView.renderProject();
+    
+// });
+
+keys.createButton.addEventListener('click',e =>{
     e.preventDefault();
-    tasksList.addTask(keys.taskInput.value, new Date(keys.taskDate.value).toLocaleDateString("en-US"));
-    keys.taskInput.value = '';
-    keys.taskDate.value = '';
-    projectView.renderProject();
+    projectView.AddTask();
     
 });
-
 keys.deleteButton.addEventListener("click", () =>{
     for(let i =0; i< keys.listView.children.length; i++){
         console.log(i);
@@ -48,7 +54,7 @@ keys.deleteButton.addEventListener("click", () =>{
             tasksList.deleteTask(i)
         }
     };
-    projectView.renderProject();
+    projectView.RenderProject();
 
  });
 

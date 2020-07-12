@@ -1,9 +1,5 @@
 export function renderTask(item)
 {
-    const markup = `
-        <li>
-            <input type ="checkbox">- ${item.description} - Due: ${item.dueDate}
-        </li>
-    `;
+    const markup = `<input type ="checkbox">- ${item.description} - Due: ${item.dueDate}`;
     return markup;
 };
