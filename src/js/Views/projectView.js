@@ -23,13 +23,7 @@ export default class ProjectView{
             checkbox.setAttribute("type", "checkbox");
 
             checkbox.addEventListener('click',()=>{
-                if(checkbox.checked)
-                {
-                    li.style.textDecoration = "line-through"
-                }else{
-                    li.style.textDecoration = "none"
-
-                }
+                li.style.textDecoration = checkbox.checked? "line-through": "none";
             })
             li.appendChild(checkbox)
             li.insertAdjacentHTML('beforeend',` ${item.description} - Due: ${item.dueDate}`);
