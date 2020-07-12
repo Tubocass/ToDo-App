@@ -15,7 +15,7 @@ body {
     overflow: auto; /* Enable scroll if needed*/
 }
 h3 {
-    color: cyan;
+    /* color: cyan; */
 }
 li {
     border: 3px;

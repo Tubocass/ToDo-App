@@ -27,7 +27,7 @@ export default class ProjectView{
     {
         this.projectDescription.innerHTML = `
         <h4>
-            ${this.project.title} - ${this.project.description} - Due: ${this.project.dueDate}
+            ${this.project.title} ${this.project.dueDate?` - Due: ${this.project.dueDate}`:''}
         </h4>
         `;
         this.RenderList();
@@ -46,7 +46,8 @@ export default class ProjectView{
                 li.style.textDecoration = checkbox.checked? "line-through": "none";
             });
             li.appendChild(checkbox)
-            li.insertAdjacentHTML('beforeend',` ${item.description} - Due: ${item.dueDate}`);
+            li.insertAdjacentHTML('beforeend',` ${item.description} `);
+            li.insertAdjacentHTML('beforeend',item.dueDate?`- Due: ${item.dueDate}`:'');
             li.addEventListener("click",()=>{
                 // console.log('click');
                 //move elements
