@@ -32,46 +32,40 @@ const projects = [];
 // projectView.SetProject(tasksList);
 // projectView.RenderProject();
 
-// projects.forEach(
-
-// )
-// keys.submitButton.addEventListener('click',e =>{
-//     e.preventDefault();
-//     tasksList.addTask(keys.taskInput.value, new Date(keys.taskDate.value).toLocaleDateString("en-US"));
-//     keys.taskInput.value = '';
-//     keys.taskDate.value = '';
-//     projectView.renderProject();
-    
-// });
 
 keys.createButton.addEventListener('click',e =>{
     e.preventDefault();
     // projectView.AddTask();
-    let inputModal = document.createElement('div');
-    let taskString = document.createElement('input')
-    taskString.setAttribute("type", "text");
-    let taskDate = document.createElement('input')
-    taskDate.setAttribute("type", "date");
-    let submit = document.createElement('button')
-    submit.innerHTML= "Submit"
+    if(!keys.projectView.contains(document.getElementById("projectModal")))
+    {
+        let inputModal = document.createElement('div');
+        inputModal.setAttribute('id','projectModal')
 
-    submit.addEventListener("click",()=>{
-        console.log('click');
-        let project = new Project(taskString.value,'', taskDate.value);
-        const projectView = new ProjectView(project);
-        projects.push(projectView);
+        let taskString = document.createElement('input')
+        taskString.setAttribute("type", "text");
+        let taskDate = document.createElement('input')
+        taskDate.setAttribute("type", "date");
+        let submit = document.createElement('button')
+        submit.innerHTML= "Submit"
 
-        // keys.inputModal.style.display = 'hidden';
-        taskString.value = '';
-        taskDate.value = '';
-        
-    })
+        submit.addEventListener("click",()=>{
+            let project = new Project(taskString.value,'', taskDate.value);
+            const projectView = new ProjectView(project);
+            projects.push(projectView);
+            taskString.value = '';
+            taskDate.value = '';
+            inputModal.style.visibility = 'hidden';
+           
+        })
 
-    inputModal.appendChild(taskString);
-    inputModal.appendChild(taskDate);
-    inputModal.appendChild(submit);
-    keys.projectView.appendChild(inputModal);
-    
+        inputModal.appendChild(taskString);
+        inputModal.appendChild(taskDate);
+        inputModal.appendChild(submit);
+        keys.projectView.appendChild(inputModal);
+    }else{
+        document.getElementById("projectModal").style.visibility = 'visible';
+        console.log(document.getElementById("projectModal").display);
+    }
 });
 keys.deleteButton.addEventListener("click", () =>{
     for(let i =0; i< keys.listView.children.length; i++){
